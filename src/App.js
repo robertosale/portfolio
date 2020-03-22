@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import mifoto from './img/mifoto.jpeg'
+import Header from './components/Header'
+import SkillsBar from './components/SkillsBar'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const SKILLS = [
+  {type: "HTML", level: 99},
+  {type: "CSS", level: 98},
+  {type: "JavaScript", level: 87},
+  {type: "jQuery", level: 92},
+  {type: "BootStrap", level: 90},
+  {type: "Photoshop", level: 100},
+  {type: "Angular.js", level: 16},
+  {type: "React.js", level: 25},
+  {type: "PHP", level: 36},
+  {type: "Ruby", level: 11}
+];
+
+
+class App extends Component {
+  state = { 
+    image: mifoto
+   }
+  render() { 
+    return (
+      <div className="container">
+        
+        <Header image={this.state.image}/>
+        <SkillsBar hue="300" saturation="40" skills={SKILLS}/>
+
+      </div>
+      );
+  }
 }
-
+ 
 export default App;
