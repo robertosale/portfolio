@@ -1,33 +1,39 @@
 import React, { Component } from 'react';
-import mifoto from './img/mifoto.jpeg'
-import Header from './components/Header'
-import SkillsBar from './components/SkillsBar'
-import './App.css'
+import mifoto from './img/mifoto.jpeg';
 
-const SKILLS = [
-  {type: "HTML", level: 99},
-  {type: "CSS", level: 98},
-  {type: "JavaScript", level: 87},
-  {type: "jQuery", level: 92},
-  {type: "BootStrap", level: 90},
-  {type: "Photoshop", level: 100},
-  {type: "Angular.js", level: 16},
-  {type: "React.js", level: 25},
-  {type: "PHP", level: 36},
-  {type: "Ruby", level: 11}
-];
+import styles from './App.module.css';
+
+import html5Logo from './img/html5-logo.png';
+import cssLogo from './img/css-logo.jpg';
+import jsLogo from './img/JavaScript-logo.png';
+import reactLogo from './img/react-logo.png' ;
+
+import tulioLogo from './img/tulioLogo.png';
+import untLogo from './img/untLogo.png';
+
+import Header from './components/Header';
+import Skills from './components/Skills';
+import Estudios from './components/Estudios';
 
 
 class App extends Component {
   state = { 
-    image: mifoto
+    image: mifoto,
+    skills: [html5Logo,cssLogo,jsLogo,reactLogo],
+    estudios: [tulioLogo, untLogo]
    }
   render() { 
     return (
-      <div className="container">
+      <div className={styles.containerApp}>
         
         <Header image={this.state.image}/>
-        <SkillsBar hue="300" saturation="40" skills={SKILLS}/>
+
+        <span className={styles.descripcion}>Front End Developer de la escuela de Alex. React rules!</span>
+
+        <Skills className={styles.skills} skills={this.state.skills} style={{"font-size":"xx-large"}} titulo='Skills'/>
+
+        <Skills className={styles.skills} skills={this.state.estudios} style={{"font-size":"xx-large"}} titulo='Formación Académica'/>
+        
 
       </div>
       );
