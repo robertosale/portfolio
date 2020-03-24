@@ -20,19 +20,30 @@ class App extends Component {
   state = { 
     image: mifoto,
     skills: [html5Logo,cssLogo,jsLogo,reactLogo],
-    estudios: [tulioLogo, untLogo]
+    estudios:         [{
+                          nombre:"Colegio Tulio Garcia Fernández",
+                          promocion:"2006",
+                          descripcion:"Bachiller Economico",
+                          logo: tulioLogo
+                        },
+                        {
+                          nombre:"Universidad Nacional de Tucumán",
+                          promocion:"2014-actual",
+                          descripcion:"Ingeniería en Computación",
+                          logo: untLogo
+                        }]
    }
   render() { 
     return (
-      <div className={styles.containerApp}>
+      <div className={`${styles.containerApp} ${styles.terciary}`} >
         
         <Header image={this.state.image}/>
 
         <span className={styles.descripcion}>Front End Developer de la escuela de Alex. React rules!</span>
 
-        <Skills className={styles.skills} skills={this.state.skills} style={{"font-size":"xx-large"}} titulo='Skills'/>
+        <Skills className={styles.skills} skills={this.state.skills} style={{"font-size":"x-large","color":"#B1D4E0"}} titulo='Skills'/>
 
-        <Skills className={styles.skills} skills={this.state.estudios} style={{"font-size":"xx-large"}} titulo='Formación Académica'/>
+        <Estudios className={styles.skills} estudios={this.state.estudios}  />
         
 
       </div>

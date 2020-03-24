@@ -1,0 +1,44 @@
+.container{
+    margin-top: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+
+.institucionContainer{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.detallesContainer{
+
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.image{
+    height: 70px;    
+    width: 70px;
+    border-radius: 10%;
+    
+}
+
+.titulo{
+    font-size:x-large;
+    color: #B1D4E0;
+}
+
+span{
+    font-size: small;
+    color: #B1D4E0;
+}
