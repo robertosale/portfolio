@@ -1,16 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styles from './Skills.module.css';
 
 class Skills extends Component {
-    state = {  }
+       
+
+
     render() { 
+        const {skills,style,titulo} = this.props;
+        const skillsArr = Object.values(skills);
+        console.log("skillsArr:::::::::::::",skillsArr);
+        
         return ( 
         <div className={styles.container}>
-            <span style={this.props.style}>{this.props.titulo}</span>
+            <span style={style}>{titulo}</span>
             <div className={styles.skillsContainer}>
-                {this.props.skills.map(element => {
-                    return <img className={styles.image} src={element} alt=""/>
-                })}
+            {
+                skillsArr.map(elem =>
+                    <img className={styles.image} src={elem} alt=""/>
+                )
+                
+                   
+            } 
+                
             </div>
 
 

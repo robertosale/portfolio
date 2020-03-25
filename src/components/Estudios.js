@@ -5,6 +5,11 @@ import styles from './Estudios.module.css'
 class Estudios extends Component {
     state = {  }
     render() { 
+
+        const estudios = Object.values(this.props.estudios);
+        
+        console.log("estudios::::::::::::",estudios);
+
         return ( 
             <div className={styles.container}>
 
@@ -13,7 +18,7 @@ class Estudios extends Component {
                     
                     
                     
-                        {this.props.estudios.map(element =>{
+                        {estudios.map(element =>{
                             return (
                             <div className={styles.detallesContainer}>
                                 <img className={styles.image} src={element.logo} alt=""/>
