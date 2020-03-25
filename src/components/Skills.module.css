@@ -12,7 +12,8 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
-    width: 100vw;
+    width: 100vw; 
+    max-width: 473px;
 
 
 }
